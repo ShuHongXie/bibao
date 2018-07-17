@@ -1,0 +1,32 @@
+{% extends '../public/base_framework.nj' %}
+
+{% block titlename %}<title>币报_APP下载_数字货币数据平台</title>{% endblock %}
+{% block stylesheets %}<link rel="stylesheet" type="text/css" href="./public/front_end/css/index.css"/>{% endblock %}
+
+{# 导航信息 #}
+{% block tip %} {{ info.tip }} {% endblock %}
+{% block volume %} {{ info.volume }} {% endblock %}
+{% block values %} {{ info.values }} {% endblock %}
+{% block tokenNums %} {{ info.tokenNums }} {% endblock %}
+
+{# 主要内容 #}
+{% block content %}
+<div style="width: 100%;background:#1e1e1e;">
+  <img src="./public/front_end/img/appbg.jpg"  style="width: 100%;height: 689px;display:block;"  alt=""/>
+</div>
+{% endblock %}
+
+{# 友情链接商标 #}
+{% block trademark %}
+<ul class="shangbiao clearfix">
+  {% for item in info.trademark %}
+  <li><a href='{{ item.link }}' ><img src="./public{{ item.img }}" alt="" /></a></li>
+  {% endfor %}
+</ul>
+{% endblock %}
+{# 侧边滑过二维码图片 #}
+{% block qq %}<img src="public/{{ info.qq }}" alt="" />{% endblock %}
+{% block wechat %}<img src="public/{{ info.wechat }}" alt="" />{% endblock %}
+{# 侧边邮箱和电话 #}
+{% block phone %}{{ info.phone }}{% endblock %}
+{% block email %}{{ info.email }}{% endblock %}

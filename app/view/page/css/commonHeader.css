@@ -1,0 +1,535 @@
+body {
+  width: 100%;
+  background: #FFFFFF;
+  padding-bottom: 270px;
+  position: relative;
+  min-height: 100% !important;
+  box-sizing: border-box; }
+
+html {
+  width: 100%;
+  height: 100% !important; }
+
+#header {
+  width: 100%;
+  height: 50px;
+  background: #1e1e1e;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 9; }
+  #header .container {
+    width: 1200px;
+    height: 50px;
+    margin: 0 auto; }
+    #header .container ul li {
+      float: left;
+      line-height: 50px;
+      color: #999999;
+      font-size: 14px;
+      margin-right: 120px; }
+      #header .container ul li span {
+        color: #20CA70; }
+      #header .container ul li:nth-child(1) i {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background: #20ca70;
+        border-radius: 50%;
+        margin-right: 10px; }
+      #header .container ul li:nth-child(1) span {
+        color: #FFFFFF;
+        margin-right: 10px; }
+      #header .container ul li:nth-child(2) span {
+        color: #999999 !important; }
+      #header .container ul li:last-child {
+        margin: 0; }
+
+#nav {
+  width: 100%;
+  height: 81px;
+  background: #FFFFFF;
+  border-bottom: 1px solid #eeeeee;
+  position: fixed;
+  left: 0;
+  top: 50px;
+  z-index: 9; }
+  #nav .container {
+    width: 1200px;
+    height: 81px;
+    margin: 0 auto;
+    position: relative; }
+    #nav .container .nav {
+      width: 500px;
+      margin: 0 auto; }
+      #nav .container .nav > li {
+        height: 81px;
+        line-height: 81px;
+        font-size: 14px;
+        float: left;
+        padding: 0 24px;
+        cursor: pointer; }
+        #nav .container .nav > li a {
+          color: #333333; }
+        #nav .container .nav > li:nth-child(2) {
+          position: relative; }
+          #nav .container .nav > li:nth-child(2):after {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 5px;
+            background: url(../img/sprite.png) -171px -123px no-repeat;
+            top: 40px;
+            right: 4px; }
+          #nav .container .nav > li:nth-child(2) .rank {
+            position: absolute;
+            left: 0;
+            top: 66px;
+            width: 222px;
+            height: 86px;
+            padding: 0 16px;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 4px 0px 15px rgba(102, 102, 102, 0.15);
+            display: none;
+            z-index: 3; }
+            #nav .container .nav > li:nth-child(2) .rank li {
+              height: 43px;
+              line-height: 43px; }
+              #nav .container .nav > li:nth-child(2) .rank li a {
+                font-size: 16px;
+                color: #666666; }
+                #nav .container .nav > li:nth-child(2) .rank li a:hover {
+                  color: #1CB162; }
+        #nav .container .nav > li:nth-child(3) {
+          font-size: 26px;
+          color: #242825; }
+          #nav .container .nav > li:nth-child(3) img {
+            vertical-align: middle; }
+        #nav .container .nav > li:last-child {
+          margin: 0; }
+    #nav .container .input-box {
+      position: absolute;
+      right: 0;
+      top: 23px; }
+      #nav .container .input-box input {
+        width: 258px;
+        height: 36px;
+        border: 1px solid #e2e2e2;
+        border-radius: 3px;
+        text-indent: 16px; }
+        #nav .container .input-box input::-moz-placeholder {
+          color: #e2e2e2; }
+        #nav .container .input-box input::-webkit-input-placeholder {
+          color: #e2e2e2; }
+        #nav .container .input-box input:-ms-input-placeholder {
+          color: #e2e2e2; }
+      #nav .container .input-box i {
+        position: absolute;
+        width: 38px;
+        height: 18px;
+        background: url(../img/sprite.png) -156px -66px #FFFFFF no-repeat;
+        top: 12px;
+        right: 1px;
+        z-index: 2;
+        cursor: pointer; }
+
+#footer {
+  width: 100%;
+  height: 270px;
+  background: #212121;
+  position: absolute;
+  left: 0;
+  bottom: 0; }
+  #footer .container {
+    width: 1200px;
+    height: 270px;
+    margin: 0 auto;
+    overflow: hidden; }
+    #footer .container .shangbiao {
+      margin: 40px 0 52px 0; }
+      #footer .container .shangbiao li {
+        float: left;
+        margin-right: 33px;
+        width: 120px;
+        height: 30px; }
+        #footer .container .shangbiao li:last-child {
+          margin: 0; }
+    #footer .container .about {
+      width: 364px;
+      margin: 0 auto 10px auto; }
+      #footer .container .about li {
+        padding: 0 10px;
+        font-size: 14px;
+        color: #FFFFFF;
+        float: left;
+        height: 33px;
+        line-height: 33px; }
+        #footer .container .about li a {
+          color: #FFFFFF; }
+        #footer .container .about li img {
+          width: 32px;
+          height: 33px; }
+    #footer .container .names {
+      font-size: 26px;
+      color: #20CA70;
+      text-align: center; }
+    #footer .container p:last-child {
+      font-size: 14px;
+      color: #999999;
+      text-align: center;
+      margin-top: 48px; }
+
+.login-box {
+  position: fixed;
+  width: 40px;
+  height: 113px;
+  right: 0;
+  top: 340px; }
+  .login-box .toLogin, .login-box .toRes {
+    position: absolute;
+    width: 26px;
+    height: 40px;
+    border: 1px solid #20CA70;
+    padding: 6px 6px;
+    background-color: #FFFFFF;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 5px;
+    color: #20CA70;
+    line-height: 20px;
+    display: none; }
+  .login-box .toRes {
+    top: 59px; }
+  .login-box .userCenter {
+    width: 22px;
+    height: 111px;
+    border: 1px solid #20CA70;
+    text-align: center;
+    border-radius: 5px;
+    color: #20CA70;
+    background: none;
+    line-height: 18px;
+    padding: 6px 6px;
+    font-size: 14px;
+    position: absolute;
+    top: 0;
+    right: 0; }
+    .login-box .userCenter i {
+      width: 21px;
+      height: 21px;
+      display: block;
+      background: url(../img/sprite.png) -215px -15px no-repeat;
+      margin-bottom: 8px; }
+
+.msg-box {
+  position: fixed;
+  right: 0;
+  top: 520px;
+  z-index: 5; }
+  .msg-box .QRcode-qq, .msg-box .QRcode-wechat {
+    width: 138px;
+    height: 173px;
+    background: #FFFFFF;
+    border: 1px solid #20CA70;
+    position: absolute;
+    top: 0;
+    left: -150px;
+    border-radius: 5px;
+    text-align: center;
+    overflow: hidden;
+    margin-right: 20px;
+    visibility: hidden; }
+    .msg-box .QRcode-qq img, .msg-box .QRcode-wechat img {
+      width: 112px;
+      height: 112px;
+      margin-top: 12px; }
+    .msg-box .QRcode-qq p, .msg-box .QRcode-wechat p {
+      font-size: 13px;
+      color: #333333;
+      margin-top: 12px; }
+  .msg-box .QRcode-wechat {
+    top: -45px; }
+  .msg-box .phone-num {
+    position: absolute;
+    width: 138px;
+    height: 110px;
+    border-radius: 5px;
+    left: -148px;
+    top: 0;
+    font-size: 14px;
+    padding-right: 20px;
+    visibility: hidden; }
+    .msg-box .phone-num div {
+      padding: 12px 12px 0 12px;
+      border: 1px solid #20CA70 !important;
+      background: #FFFFFF; }
+      .msg-box .phone-num div span {
+        color: #333333; }
+      .msg-box .phone-num div p {
+        line-height: 28px;
+        color: #20CA70; }
+      .msg-box .phone-num div:hover {
+        background: #CEFFE5; }
+    .msg-box .phone-num div:nth-child(1) {
+      box-sizing: border-box;
+      border-radius: 5px 5px 0 0; }
+    .msg-box .phone-num div:nth-child(2) {
+      border: none;
+      border-radius: 0 0 5px 5px;
+      padding: 11px 12px 0 12px;
+      border-top: none !important; }
+  .msg-box ul li {
+    width: 38px;
+    height: 38px;
+    border: 1px solid #20CA70;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    position: relative;
+    background: none;
+    z-index: 5; }
+    .msg-box ul li i {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 38px;
+      height: 38px;
+      z-index: 5;
+      border-radius: 5px;
+      cursor: pointer; }
+      .msg-box ul li i:hover {
+        background-color: rbga(32, 202, 102, 0.1) !important; }
+    .msg-box ul li:hover i {
+      background-color: #CEFFE5 !important; }
+    .msg-box ul li:hover div {
+      visibility: visible; }
+    .msg-box ul li:nth-child(1) i {
+      background: url(../img/sprite.png) -6px -6px rgba(255, 255, 255, 0) no-repeat; }
+    .msg-box ul li:nth-child(2) i {
+      background: url(../img/sprite.png) -106px -5px rgba(255, 255, 255, 0) no-repeat; }
+    .msg-box ul li:nth-child(3) i {
+      background: url(../img/sprite.png) -56px -6px rgba(255, 255, 255, 0) no-repeat; }
+    .msg-box ul li:nth-child(4) i {
+      background: url(../img/sprite.png) -155px -6px rgba(255, 255, 255, 0) no-repeat; }
+
+.blackBg {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.1);
+  display: none; }
+
+.loginTip {
+  width: 400px;
+  height: 200px;
+  position: fixed;
+  left: 50%;
+  margin-left: -200px;
+  margin-top: -100px;
+  top: 50%;
+  z-index: 11;
+  background: white;
+  border-radius: 5px;
+  display: none; }
+  .loginTip p {
+    margin: 68px 0 29px 0;
+    text-align: center;
+    color: #333333; }
+    .loginTip p span {
+      color: #20CA70; }
+  .loginTip div {
+    width: 210px;
+    height: 40px;
+    margin: 0 auto; }
+    .loginTip div button {
+      width: 88px;
+      height: 38px;
+      line-height: 38px;
+      border: 1px solid #e5e5e5;
+      border-radius: 3px;
+      background: none;
+      color: #333333;
+      cursor: pointer;
+      font-size: 16px; }
+      .loginTip div button:hover {
+        color: #20CA70;
+        border-color: #20CA70; }
+      .loginTip div button:nth-child(1) {
+        float: left; }
+      .loginTip div button:nth-child(2) {
+        float: right; }
+
+.register, .login, .retrieve {
+  width: 408px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 12;
+  background: #FFFFFF;
+  display: none; }
+  .register .close, .login .close, .retrieve .close {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: url(../img/sprite.png) -366px -116px no-repeat;
+    right: 35px;
+    top: 35px;
+    cursor: pointer; }
+  .register > p, .login > p, .retrieve > p {
+    margin: 137px 0 53px 0;
+    font-size: 24px;
+    color: #242825;
+    text-align: center; }
+  .register ul, .login ul, .retrieve ul {
+    width: 300px;
+    margin: 0 auto; }
+    .register ul li, .login ul li, .retrieve ul li {
+      margin-bottom: 20px;
+      position: relative; }
+      .register ul li input, .login ul li input, .retrieve ul li input {
+        border: 1px solid #E2E2E2;
+        width: 298px;
+        height: 42px;
+        background: none;
+        text-indent: 20px;
+        padding: 0; }
+      .register ul li > .testCode, .register ul li > .forgetPwd, .login ul li > .testCode, .login ul li > .forgetPwd, .retrieve ul li > .testCode, .retrieve ul li > .forgetPwd {
+        position: absolute;
+        width: 108px;
+        height: 42px;
+        line-height: 42px;
+        text-align: center;
+        top: 1px;
+        right: 1px;
+        font-size: 14px;
+        color: #1CB162;
+        background: #FFFFFF;
+        cursor: pointer; }
+      .register ul li > span, .login ul li > span, .retrieve ul li > span {
+        position: absolute;
+        left: 0;
+        top: 46px;
+        font-size: 12px;
+        display: none; }
+      .register ul li:nth-child(4), .login ul li:nth-child(4), .retrieve ul li:nth-child(4) {
+        margin-bottom: 40px; }
+      .register ul li p, .login ul li p, .retrieve ul li p {
+        font-size: 14px;
+        color: #666;
+        margin: 0;
+        text-align: center; }
+        .register ul li p span, .login ul li p span, .retrieve ul li p span {
+          color: #20CA70;
+          cursor: pointer; }
+      .register ul li button, .login ul li button, .retrieve ul li button {
+        width: 300px;
+        height: 44px;
+        background: #20ca70;
+        border-radius: 3px;
+        border: none;
+        font-size: 16px;
+        color: #FFFFFF;
+        cursor: pointer; }
+        .register ul li button:hover, .login ul li button:hover, .retrieve ul li button:hover {
+          background-color: #1ba75d; }
+
+.login {
+  display: none; }
+  .login ul li:nth-child(2) {
+    margin-bottom: 40px; }
+  .login ul li > .advertise {
+    width: 300px;
+    height: 320px;
+    border-radius: 3px !important;
+    overflow: hidden;
+    position: relative; }
+    .login ul li > .advertise div {
+      width: 48px;
+      height: 24px;
+      line-height: 24px;
+      color: #FFFFFF;
+      background: #000;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      font-size: 12px;
+      text-align: center;
+      border-radius: 0 0 3px 0; }
+
+.userMsg {
+  width: 408px;
+  height: 100%;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 12;
+  background: url(../img/mountain.png) #FFFFFF no-repeat;
+  background-size: 100% 300px;
+  display: none; }
+  .userMsg .userTip {
+    font-size: 24px;
+    color: #FFFFFF;
+    position: absolute;
+    left: 43px;
+    top: 33px; }
+  .userMsg .close {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: url(../img/sprite.png) -216px -116px no-repeat;
+    right: 35px;
+    top: 35px;
+    cursor: pointer; }
+  .userMsg .userTop {
+    width: 408px;
+    height: 300px;
+    overflow: hidden; }
+    .userMsg .userTop > div {
+      margin-top: 200px;
+      padding-left: 44px;
+      display: inline-block; }
+      .userMsg .userTop > div img {
+        float: left;
+        width: 50px;
+        height: 50px; }
+      .userMsg .userTop > div div {
+        float: left;
+        padding: 5px 0 0  17px; }
+        .userMsg .userTop > div div p {
+          color: #FFFFFF;
+          font-size: 14px;
+          height: 20px;
+          line-height: 20px; }
+  .userMsg > ul {
+    padding: 40px 0 0 56px; }
+    .userMsg > ul li {
+      height: 36px;
+      line-height: 36px;
+      margin-bottom: 10px; }
+      .userMsg > ul li:nth-child(2) div {
+        width: 150px;
+        height: 36px;
+        line-height: 36px;
+        display: inline-block;
+        text-align: center;
+        font-size: 14px;
+        color: #666666;
+        background: #f7f7f7;
+        border-radius: 3px; }
+      .userMsg > ul li:nth-child(2) input {
+        display: inline-block;
+        width: 150px; }
+      .userMsg > ul li:nth-child(2) span:last-child {
+        font-size: 14px;
+        color: #1CB162;
+        cursor: pointer; }
+      .userMsg > ul li:nth-child(2n+1) span:last-child {
+        color: #666; }
+      .userMsg > ul li:last-child span:last-child {
+        color: #1CB162; }
+
+/*# sourceMappingURL=commonHeader.css.map */

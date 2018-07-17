@@ -1,0 +1,9 @@
+$(function(){
+	console.log('进入rankingList')
+	$('.code').hover(function(){
+		console.log('划入')
+		$('.QR-code').show();
+	},function(){
+		$('.QR-code').hide();
+	})
+})

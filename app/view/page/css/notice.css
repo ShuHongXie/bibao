@@ -1,0 +1,159 @@
+#notice .container {
+  width: 1200px;
+  margin: 0 auto; }
+  #notice .container .notice-top {
+    padding: 43px 0 35px 0;
+    border-bottom: 1px solid #eeeeee; }
+    #notice .container .notice-top .news {
+      float: left;
+      font-size: 22px;
+      color: #242825;
+      padding-left: 25px;
+      height: 40px;
+      line-height: 40px;
+      position: relative; }
+      #notice .container .notice-top .news:before {
+        content: '';
+        position: absolute;
+        width: 2px;
+        height: 24px;
+        background-color: #20CA70;
+        left: 0;
+        top: 8px; }
+    #notice .container .notice-top .change-btn {
+      float: right; }
+      #notice .container .notice-top .change-btn button {
+        width: 148px;
+        height: 38px;
+        line-height: 38px;
+        font-size: 16px;
+        color: #333;
+        border-radius: 3px;
+        background: #FFFFFF;
+        border: 1px solid #E5E5E5;
+        cursor: pointer; }
+        #notice .container .notice-top .change-btn button:hover {
+          color: #20CA70;
+          border: 1px solid #20CA70; }
+        #notice .container .notice-top .change-btn button.active {
+          color: #20CA70;
+          border: 1px solid #20CA70; }
+  #notice .container .notice-bottom .news-list {
+    display: none;
+    padding-bottom: 36px; }
+    #notice .container .notice-bottom .news-list li {
+      padding: 40px 0;
+      border-bottom: 1px solid #eeeeee; }
+      #notice .container .notice-bottom .news-list li p {
+        font-size: 20px;
+        color: #333333; }
+        #notice .container .notice-bottom .news-list li p:nth-child(1) span {
+          color: #999999; }
+        #notice .container .notice-bottom .news-list li p:nth-child(2) {
+          padding-left: 10px;
+          font-size: 14px;
+          color: #666;
+          margin-top: 25px;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 3;
+          overflow: hidden; }
+      #notice .container .notice-bottom .news-list li div {
+        font-size: 14px;
+        text-align: right;
+        margin-top: 10px; }
+        #notice .container .notice-bottom .news-list li div a {
+          color: #1CB162; }
+  #notice .container .notice-bottom .notice-list {
+    padding-bottom: 36px; }
+    #notice .container .notice-bottom .notice-list li {
+      width: 100%;
+      height: 60px;
+      line-height: 60px;
+      border-bottom: 1px solid #EEEEEE; }
+      #notice .container .notice-bottom .notice-list li .notice-title {
+        float: left;
+        font-size: 20px;
+        color: #333; }
+      #notice .container .notice-bottom .notice-list li .notice-title {
+        float: right;
+        font-size: 14px;
+        color: #333; }
+  #notice .container .page-bottom {
+    width: 100%;
+    height: 30px;
+    margin-bottom: 100px;
+    position: relative; }
+    #notice .container .page-bottom .pagination {
+      position: absolute;
+      width: 326px;
+      height: 30px;
+      top: 5px;
+      right: 0;
+      z-index: 2; }
+      #notice .container .page-bottom .pagination span {
+        width: 28px;
+        height: 28px;
+        line-height: 28px;
+        text-align: center;
+        border: 1px solid #E5E5E5;
+        position: absolute;
+        border-radius: 5px;
+        cursor: pointer; }
+      #notice .container .page-bottom .pagination span:nth-child(2) {
+        right: 8px; }
+      #notice .container .page-bottom .pagination .prevPage:after, #notice .container .page-bottom .pagination .nextPage:after {
+        content: '';
+        position: absolute;
+        width: 9px;
+        height: 11px;
+        background: url(../img/sprite.png) -271px -120px no-repeat;
+        top: 8px;
+        left: 8px; }
+      #notice .container .page-bottom .pagination .prevPage:hover, #notice .container .page-bottom .pagination .nextPage:hover {
+        background: #20CA70; }
+        #notice .container .page-bottom .pagination .prevPage:hover:after, #notice .container .page-bottom .pagination .nextPage:hover:after {
+          background: url(../img/sprite.png) -321px -20px no-repeat; }
+      #notice .container .page-bottom .pagination .nextPage:after {
+        background: url(../img/sprite.png) -321px -120px no-repeat;
+        left: 10px; }
+      #notice .container .page-bottom .pagination .nextPage:hover {
+        background: #20CA70; }
+        #notice .container .page-bottom .pagination .nextPage:hover:after {
+          background: url(../img/sprite.png) -321px -70px no-repeat; }
+      #notice .container .page-bottom .pagination .pageIdx {
+        width: 54px;
+        height: 28px;
+        background: #FAFAFA;
+        border: 1px solid #E5E5E5;
+        position: absolute;
+        right: 42px;
+        border-radius: 5px;
+        padding: 0;
+        text-align: center; }
+      #notice .container .page-bottom .pagination ul {
+        width: 256px;
+        height: 30px;
+        position: absolute;
+        left: 36px;
+        cursor: pointer; }
+        #notice .container .page-bottom .pagination ul li {
+          border: 1px solid #E5E5E5;
+          border-radius: 5px;
+          width: 28px;
+          height: 28px !important;
+          line-height: 28px;
+          text-align: center;
+          font-size: 14px;
+          color: #333333;
+          float: left;
+          margin-right: 6px;
+          padding: 0; }
+          #notice .container .page-bottom .pagination ul li:hover {
+            color: #FFFFFF;
+            background: #20CA70; }
+          #notice .container .page-bottom .pagination ul li.active {
+            color: #FFFFFF;
+            background: #20CA70; }
+
+/*# sourceMappingURL=notice.css.map */

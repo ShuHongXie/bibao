@@ -1,0 +1,86 @@
+//顶层设置两个变量  wasLogin 登录状态  urls 接口地址
+var wasLogin = false, urls = '' ;
+console.log('进入common')
+$(function(){
+	//右侧登陆注册等切换
+	$('.toLogin').click(function(){
+		$('.login').stop().animate({
+			right:0
+		},300)
+		$('.blackBg').fadeIn();
+	})
+	$('.toRes').click(function(){
+		$('.register').stop().animate({
+			right:0
+		},300)
+		$('.blackBg').fadeIn();
+	})
+	//点击用户中心出现
+	$('.userCenter').click(function(){
+		$('.userMsg').stop().animate({
+			right:0
+		},300)
+		$('.blackBg').fadeIn();
+	})
+	
+	//点击黑色背景全部消失
+	$('.blackBg').click(function(){
+		$('.login').stop().animate({
+			right:'-480px'
+		},300);
+		$('.register').stop().animate({
+			right:'-480px'
+		},300);
+		$('.retrieve').stop().animate({
+			right:'-480px'
+		},300);
+		$('.userMsg').stop().animate({
+			right:'-480px'
+		},300)
+		$(this).fadeOut();
+	})
+	//点击关闭
+	$('.close').click(function(){
+		$('.login').stop().animate({
+			right:'-480px'
+		},300);
+		$('.register').stop().animate({
+			right:'-480px'
+		},300);
+		$('.retrieve').stop().animate({
+			right:'-480px'
+		},300);
+		$('.userMsg').stop().animate({
+			right:'-480px'
+		},300)
+		$('.blackBg').fadeOut();
+	})
+	
+	$('.reg_now').click(function(){
+		$('.login').stop().animate({
+			right:'-480px'
+		},300);
+		$('.register').stop().animate({
+			right:'0'
+		},300);
+	})
+	$('.login_now').click(function(){
+		$('.register').stop().animate({
+			right:'-480px'
+		},300);
+		$('.retrieve').stop().animate({
+			right:'-480px'
+		},300);
+		$('.login').stop().animate({
+			right:'0'
+		},300);
+	})
+	$('.forgetPwd').click(function(){
+		$('.login').stop().animate({
+			right:'-480px'
+		},300);
+		$('.retrieve').stop().animate({
+			right:'0'
+		},300);
+	})
+})

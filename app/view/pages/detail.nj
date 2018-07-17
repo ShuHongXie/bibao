@@ -1,0 +1,163 @@
+{% extends '../public/sec_framework.nj' %}
+
+{% block titlename %}<title>币报_Token详情_数字货币数据平台</title>{% endblock %}
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="../public/front_end/css/rankList.css"/>
+<link rel="stylesheet" type="text/css" href="../public/front_end/css/chartist.min.css"/>
+<style>
+  .ct-chart3 g:nth-child(1) .ct-slice-donut {
+    stroke: #FA7252!important;
+  }
+  .ct-chart2 g:nth-child(1) .ct-slice-donut {
+    stroke: #1CB162!important;
+  }
+  .ct-chart1 g:nth-child(1) .ct-slice-donut {
+    stroke: #1BB8FA!important;
+  }
+  .ct-chart3 g:nth-child(2) .ct-slice-donut, .ct-chart2 g:nth-child(2) .ct-slice-donut,.ct-chart1 g:nth-child(2) .ct-slice-donut{
+    stroke: #eeeeee!important;
+  }
+</style>
+{% endblock %}
+
+{# 导航信息 #}
+{% block tip %} {{ info.tip }} {% endblock %}
+{% block volume %} {{ info.volume }} {% endblock %}
+{% block values %} {{ info.values }} {% endblock %}
+{% block tokenNums %} {{ info.tokenNums }} {% endblock %}
+
+{# 主要内容 #}
+{% block content %}
+<div id="rank-box" style='padding:10px 0'>
+  <div class="container">
+    <div class="bit">
+      <div class="bit-top clearfix">
+        <div class="bitcoin">
+          <div class="save-box"><span>自选</span><img class='notsave' src="/public/front_end/img/notsave.png" alt="" ><img class='save' style="display:none;" src="/public/front_end/img/save.png" alt="" ></div>
+          <img src="/public/icons/{{ token.icon }}"/>
+          <p class="name">{{ token.en_name }} {{ token.name }}</p>
+          <p class="prince"><span>￥{{ token.price_CNY }} </span>
+            {% if token.percent_change_24h >= 0 %}
+              <button class='up'>{{ token.percent_change_24h }}%</button>
+            {% else %}
+              <button class='down'>{{ token.percent_change_24h }}%</button>
+            {% endif %}
+          </p>
+          <p>≈ ${{ token.price_USD }}</p>
+          <ul class="clearfix">
+            <li>
+              1H变化:<span> {{ token.percent_change_1h }}%</span>
+            </li>
+            <li>
+              7D变化:<span> {{ token.percent_change_7d }}%</span>
+            </li>
+          </ul>
+        </div>
+        <div class="bit-introduce">
+          <h5>{{ token.en_name }}介绍</h5>
+          <div>{{ token.info.remark | safe }}</div>
+        </div>
+      </div>
+      <div class="bit-bottom">
+        <ul class="clearfix">
+          <li>
+            英文名: <span>{{ token.en_name }}/{{ token.symbol }}</span>
+          </li>
+          <li>
+            中文名: <span>{{ token.name }}</span>
+          </li>
+          <li>
+            网站: <span>
+            {% for item in token.info.website %}
+                <a href="{{item}}" target='_blank'>网站{{ loop.index }}</a> 
+            {% endfor %}
+            </span>
+          </li>
+          <li>
+            区块站: <span>
+            {% for item in token.info.blocks_web %}
+                <a href="{{item}}" target='_blank'>区块站{{ loop.index }}</a>
+            {% endfor %}
+            </span>
+          </li>
+          <li>
+            白皮书:<span>
+              <a href="{{token.info.white_boooks}}" target='_blank'>白皮书站</a></span>
+            </span>
+          </li>
+          <li>
+            <i></i><span>风险提示：炒币有风险，投资需谨慎!</span>
+          </li>
+          <li>
+            区域群：<span><a href="javascript:;">加入QQ群 / 加入电报群</a><i class="code"></i></span>
+            <div class="QR-code">
+              <ul class="clearfix">
+                <li>
+                  <img src="../public{{ info.qqGroup }}" alt=""/>
+                  <p>QQ交流群</p>
+                </li>
+                <li>
+                  <img src="../public{{ info.wechatGroup }}" alt=""/>
+                  <p>微信交流群</p>
+                </li>
+                <li>
+                  <img src="../public{{ info.regionGroup }}" alt=""/>
+                  <p>区域电报群</p>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            发行时间:<span class='updated_time'>{{ token.info.date }}</span>
+          </li>
+        </ul>
+      </div>
+      <div class="annular">
+        <ul class="clearfix">
+          <li>
+            <div class="ct-chart3"  style="width:200px;min-width:200px;height:200px;"></div>
+            <span class="percent char_3"></span>
+            <span class="title">占全球总市值</span>
+          </li>
+          <li>
+            <div class="ct-chart2"  style="width:200px;min-width:200px;height:200px;"></div>
+            <span class="percent char_2"></span>
+            <span class="title">流通率</span>
+          </li>
+          <li>
+            <div class="ct-chart1"  style="width:200px;min-width:200px;height:200px;"></div>
+            <span class="percent char_1"></span>
+            <span class="title">换手率</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="BTC-trend">
+      <div class="btc-title">BTC价格趋势</div>
+      <div id="container" style="width:1200px;height: 550px;margin: 0 auto;">  
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+{# 友情链接商标 #}
+{% block trademark %}
+<ul class="shangbiao clearfix">
+  {% for item in info.trademark %}
+  <li><a href='{{ item.link }}' ><img src="../public{{ item.img }}" alt="" /></a></li>
+  {% endfor %}
+</ul>
+{% endblock %}
+{# 侧边滑过二维码图片 #}
+{% block qq %}<img src="../public/{{ info.qq }}" alt="" />{% endblock %}
+{% block wechat %}<img src="../public/{{ info.wechat }}" alt="" />{% endblock %}
+{# 侧边邮箱和电话 #}
+{% block phone %}{{ info.phone }}{% endblock %}
+{% block email %}{{ info.email }}{% endblock %}
+
+{% block scriptsrc %}
+{# <script src="./public/front_end/js/index.js"></script> #}
+<script src="../public/front_end/js/highstock.js"></script>
+<script src="../public/front_end/js/chartist.min.js"></script>
+<script src="../public/front_end/js/rankList.js"></script>
+{% endblock %}

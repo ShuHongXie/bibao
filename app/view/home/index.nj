@@ -1,0 +1,118 @@
+{% extends '../public/base_framework.nj' %}
+
+{% block titlename %}<title>币报_数字货币数据平台</title>{% endblock %}
+{% block stylesheets %}<link rel="stylesheet" type="text/css" href="./public/front_end/css/index.css"/>{% endblock %}
+
+{# 导航信息 #}
+{% block tip %} {{ info.tip }} {% endblock %}
+{% block volume %} {{ info.volume }} {% endblock %}
+{% block values %} {{ info.values }} {% endblock %}
+{% block tokenNums %} {{ info.tokenNums }} {% endblock %}
+
+{# 主要内容 #}
+{% block content %}
+{# 行情信息 #}
+<div class="table-index">
+  <div class="container">
+    <div class="btn-box">
+      <button>全部</button>
+      <button>自选行情<i></i></button>
+      <button>人民币（CNY)<i></i></button>
+      <div class="choose-lang">
+        <button>人民币（CNY)</button><button>港币（HKD)</button><button>澳大利亚元（AUD)</button><button>美元（USD)</button><button>瑞士法郎（CHF)</button><button>日元（INR)</button><button>欧元（EUR)</button><button>英镑（GBR)</button><button>韩国元（KRW)</button>
+      </div>
+      <div class="pagination m-style">
+      </div>
+    </div>
+    <div class="msg-table">
+      <table class="table_f" style="border-collapse:collapse;">
+        <tr>
+          <th><span>#</span><i></i></th>
+          <th><span>名称</span></th>
+          <th><span>流通市值</span><i></i></th>
+          <th><span>价格</span><i></i></th>
+          <th><span>流通数量</span><i></i></th>
+          <th><span>24H成交额</span><i></i></th>
+          <th><span>24H涨幅</span><i></i></th>
+          <th><span>7D价格趋势</span></th>
+          <th><span>自选</span></th>
+        </tr>
+      </table>
+      <table class="table_s" style="border-collapse:collapse;">
+        <!--<tr>
+          <th><span>#</span><i></i></th>
+          <th><span>名称</span></th>
+          <th><span>流通市值</span><i></i></th>
+          <th><span>价格</span><i></i></th>
+          <th><span>流通数量</span><i></i></th>
+          <th><span>24H成交额</span><i></i></th>
+          <th><span>24H涨幅</span><i></i></th>
+          <th><span>7D价格趋势</span></th>
+          <th><span>自选</span></th>
+        </tr>
+        <tr>
+          <td>2123</td>
+          <td><img src="img/btye.png" alt="" /><span>BTC/比特币</span></td>
+          <td>¥8,8888亿</td>
+          <td>¥2,8888</td>
+          <td>1,698万</td>
+          <td>¥3,554,850万</td>
+          <td>3,32%</td>
+          <td>Data</td>
+          <td><img src="img/save.png" alt=""/></td>
+        </tr>-->
+      </table>
+      <div class="no-save-tip">
+        <p>您还没有添加自选！点亮星星即可添加</p>
+        <div>
+          <div>自选</div>
+          <img src="./public/front_end/img/save.png" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{# 新闻信息 #}
+<div class="news">
+  <div class="container">
+    <p>新闻公告</p>
+    <ul class="clearfix">
+      {% for item in news %}
+      <li>
+        <a href="/noticeDetail/{{item.id}}">
+          <span>
+            <img src="http://127.0.0.1:7001/public{{ item.pic }}"/>
+          </span>
+          <div>
+            <p>{{ item.title }}</p>
+            <span>{{ item.content }}</span>
+            <div><span>[新闻] 2018-04-16</span><i></i></div>
+          </div>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+    <div><a href='/notice/1'>阅读更多</a></div>
+  </div>
+</div>
+{% endblock %}
+{# 友情链接商标 #}
+{% block trademark %}
+<ul class="shangbiao clearfix">
+  {% for item in info.trademark %}
+  <li><a href='{{ item.link }}' ><img src="./public{{ item.img }}" alt="" /></a></li>
+  {% endfor %}
+</ul>
+{% endblock %}
+{# 侧边滑过二维码图片 #}
+{% block qq %}<img src="public/{{ info.qq }}" alt="" />{% endblock %}
+{% block wechat %}<img src="public/{{ info.wechat }}" alt="" />{% endblock %}
+{# 侧边邮箱和电话 #}
+{% block phone %}{{ info.phone }}{% endblock %}
+{% block email %}{{ info.email }}{% endblock %}
+{# js包 #}
+{% block scriptsrc %}
+<script src="./public/front_end/js/pagination_new.js"></script>	
+<script src="./public/front_end/js/index.js"></script>
+<script src="./public/front_end/js/index_table.js"></script>
+{% endblock %}

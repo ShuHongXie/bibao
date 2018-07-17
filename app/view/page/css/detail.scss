@@ -1,0 +1,76 @@
+#notice {
+    .container {
+        width: 1200px;
+        margin: 0 auto;
+        .notice-top {
+            padding: 43px 0 35px 0;
+            border-bottom:1px solid rgba(238,238,238,1);
+            .news {
+                float: left;
+                font-size: 22px;
+                color: #242825;
+                padding-left: 25px;
+                height: 40px;
+                line-height: 40px;
+                position: relative ;
+                &:before {
+                    content: '';
+                    position: absolute;
+                    width: 2px;
+                    height: 24px;
+                    background-color: #20CA70;
+                    left: 0;
+                    top: 8px;
+                }
+            }
+            .change-btn {
+                float: right;
+                button {
+                    width: 148px;
+                    height: 38px;
+                    line-height: 38px;
+                    font-size: 16px;
+                    color: #333;
+                    border-radius: 3px;
+                    background: #FFFFFF;
+                    border: 1px solid #E5E5E5;
+                    cursor: pointer;
+                    &:hover {
+                        color: #20CA70;
+                        border: 1px solid #20CA70;
+                    }
+                    &.active {
+                        color: #20CA70;
+                        border: 1px solid #20CA70;
+                    }
+                }
+            }
+        }
+        .notice-bottom {
+            .detail {
+                padding: 46px 0 34px 0;
+                border-bottom: 1px solid rgba(242,243,244,1);
+                p {
+                    font-size: 16px;
+                    color: #061027;
+                    line-height: 26px;
+                    text-indent: 40px;
+                    margin-bottom: 30px;
+                }
+            }
+            .switch {
+                padding: 36px 0 66px 0;
+                text-align: right;
+                font-size: 14px;
+                color: #061027;
+                a {
+                    color: #061027;
+                }
+                span:nth-child(1) {
+                    margin-right: 30px;
+                }
+            }
+        }
+    }
+    
+}

@@ -1,0 +1,94 @@
+{% extends '../public/base_framework.nj' %}
+
+{% block titlename %}<title>币报_数字货币数据平台</title>{% endblock %}
+{% block stylesheets %}<link rel="stylesheet" type="text/css" href="./public/front_end/css/about.css"/>{% endblock %}
+
+{# 导航信息 #}
+{% block tip %} {{ info.tip }} {% endblock %}
+{% block volume %} {{ info.volume }} {% endblock %}
+{% block values %} {{ info.values }} {% endblock %}
+{% block tokenNums %} {{ info.tokenNums }} {% endblock %}
+
+{# 主要内容 #}
+{% block content %}
+{# 行情信息 #}
+<div id="about">
+  <div class="container">
+    <div class="about-top">
+      <ul class="clearfix">
+        <li><a href="/about">关于我们</a></li>
+        <li class="active"><a href="">联系我们</a></li>
+        <li><a href="/commonProblem">常见问题</a></li>
+        <li><a href="/statement">免责声明</a></li>
+      </ul>
+    </div>
+    <div class="about-bottom">
+      <ul class="about-all clearfix">
+        <li>
+          <div class='sec'>
+            <ul class="comtact-msg clearfix">
+            <li>
+              <p>广告合作QQ</p>
+              <p>{{ info.qqAdvertise }}</p>
+            </li>
+            <li>
+              <p>商务合作QQ</p>
+              <p>{{ info.qqbusiness }}</p>
+            </li>
+            <li>
+              <p>客服电话</p>
+              <p>{{ info.servicePhone }}</p>
+            </li>
+            <li>
+              <p>工作时间/周一至周五</p>
+              <p>上午9:00-12:00 下午14:00-18:00</p>
+            </li>
+          </ul>
+          <div class="feedback">
+            <ul class="write-msg clearfix">
+              <li>
+                <label>您的姓名 :</label>
+                <input type="text"  value="" class="usern" />
+              </li>
+              <li>
+                <label>您的邮箱地址 :</label>
+                <input type="text"  value="" class="usere" />
+              </li>
+              <li>
+                <label>您的联系电话 :</label>
+                <input type="text"  value="" class="userp" />
+              </li>
+              <li>
+                <label>您的反馈与建议 :</label>
+                <textarea name="" rows="" cols="" class="usera" ></textarea>
+              </li>
+              <li>
+                <button class='sendAdvices' >提交</button>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock %}
+{# 友情链接商标 #}
+{% block trademark %}
+<ul class="shangbiao clearfix">
+  {% for item in info.trademark %}
+  <li><a href='{{ item.link }}' ><img src="./public{{ item.img }}" alt="" /></a></li>
+  {% endfor %}
+</ul>
+{% endblock %}
+{# 侧边滑过二维码图片 #}
+{% block qq %}<img src="public/{{ info.qq }}" alt="" />{% endblock %}
+{% block wechat %}<img src="public/{{ info.wechat }}" alt="" />{% endblock %}
+{# 侧边邮箱和电话 #}
+{% block phone %}{{ info.phone }}{% endblock %}
+{% block email %}{{ info.email }}{% endblock %}
+{# js包 #}
+{% block scriptsrc %}
+<script src="./public/front_end/js/advices.js"></script>
+{% endblock %}
+

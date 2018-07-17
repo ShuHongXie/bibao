@@ -1,0 +1,82 @@
+{% extends '../public/base_framework.nj' %}
+
+{% block titlename %}<title>币报_涨跌幅排行榜_数字货币数据平台</title>{% endblock %}
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="./public/front_end/css/riseFall.css"/>
+<link rel="stylesheet" type="text/css" href="./public/front_end/css/pagination.css"/>
+{% endblock %}
+
+{# 导航信息 #}
+{% block tip %} {{ info.tip }} {% endblock %}
+{% block volume %} {{ info.volume }} {% endblock %}
+{% block values %} {{ info.values }} {% endblock %}
+{% block tokenNums %} {{ info.tokenNums }} {% endblock %}
+
+{# 主要内容 #}
+{% block content %}
+<div class="rise_fall">
+  <div class="container">
+    <div class="r_title">涨跌幅排行榜</div>
+    <div class="btn-box clearfix">
+      <div class="clearfix switch">
+        <button class="active">涨幅排行榜</button>
+        <button>跌幅排行榜</button>
+      </div>
+      <div class="clearfix choose">
+        <button>人民币(CNY)<i></i></button>
+        <button>1小时</button>
+        <button class="active">24小时</button>
+        <button>1星期</button>
+        <div class="choose-langs">
+          <button>人民币（CNY)</button><button>港币（HKD)</button><button>澳大利亚元（AUD)</button><button>美元（USD)</button><button>瑞士法郎（CHF)</button><button>日元（INR)</button><button>欧元（EUR)</button><button>英镑（GBR)</button><button>韩国元（KRW)</button>
+        </div>
+      </div>
+    </div>
+    <div class="table">
+      <table border="1" style="border-collapse:collapse;">
+        <tr>
+          <th>#</th>
+          <th>名称</th>
+          <th>简称</th>
+          <th>成交额 ( 24小时 )</th>
+          <th>价格</th>
+          <th>24小时%</th>
+        </tr>
+        <!--<tr>
+          <td>1</td>
+          <td><img src="img/btye.png" alt="" /><span><a href="/token"></a>BTC/比特币</span></td>
+          <td>BCH/USDT</td>
+          <td>￥39,658万</td>
+          <td>￥5,604</td>
+          <td><span>9.97%</span></td>
+        </tr>-->
+      </table>
+      <div class="not_data">
+        数据未成功获取,请重新刷新页面
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{# 友情链接商标 #}
+{% block trademark %}
+<ul class="shangbiao clearfix">
+  {% for item in info.trademark %}
+  <li><a href='{{ item.link }}' ><img src="./public{{ item.img }}" alt="" /></a></li>
+  {% endfor %}
+</ul>
+{% endblock %}
+{# 侧边滑过二维码图片 #}
+{% block qq %}<img src="public/{{ info.qq }}" alt="" />{% endblock %}
+{% block wechat %}<img src="public/{{ info.wechat }}" alt="" />{% endblock %}
+{# 侧边邮箱和电话 #}
+{% block phone %}{{ info.phone }}{% endblock %}
+{% block email %}{{ info.email }}{% endblock %}
+
+{% block scriptsrc %}
+<script src="./public/front_end/js/riseFall.js"></script>
+<script>
+
+</script>
+{% endblock %}

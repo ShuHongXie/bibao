@@ -1,0 +1,76 @@
+{% extends '../public/base_framework.nj' %}
+
+{% block titlename %}<title>币报_新闻列表_数字货币数据平台</title>{% endblock %}
+{% block stylesheets %}<link rel="stylesheet" type="text/css" href="./public/front_end/css/notice.css"/>{% endblock %}
+
+{# 导航信息 #}
+{% block tip %} {{ info.tip }} {% endblock %}
+{% block volume %} {{ info.volume }} {% endblock %}
+{% block values %} {{ info.values }} {% endblock %}
+{% block tokenNums %} {{ info.tokenNums }} {% endblock %}
+
+{# 主要内容 #}
+{% block content %}
+<div id="notice">
+  <div class="container">
+    <div class="notice-top clearfix">
+      <div class="news">新闻公告</div>
+      <div class="change-btn">
+        <button class="active">新闻</button>
+        <button>公告</button>
+      </div>
+    </div>
+    <div class="notice-bottom">
+      <ul class="news-list">
+        <li>
+          <p><span>《经济日报》</span>在IBM待了18年，“老将”沈鸥到币报如何做安全</p>
+          <p>比特币（bitcoin）的概念最初由中本聪在2009年提出，根据中本聪的思路设计发布的开源软件以及建构其上的p2p网络。比特币是一种p2p形式的数字货币。点对点的传输意味着一个去中心化的支付系统。与大多数货币不同，比特币不依靠特定货币机构发行，它依据特定算法，通过大量的计算产生，比特币经济使用整个p2p网络中众多节点构成的分布式数据库来确认并记录所有的交易行为，并使用密码学的设计来确保货币...</p>
+          <div><a href="javascript">阅读全文 ></a></div>
+        </li>
+        <li>
+          <p><span>《经济日报》</span>在IBM待了18年，“老将”沈鸥到币报如何做安全</p>
+          <p>比特币（bitcoin）的概念最初由中本聪在2009年提出，根据中本聪的思路设计发布的开源软件以及建构其上的p2p网络。比特币是一种p2p形式的数字货币。点对点的传输意味着一个去中心化的支付系统。与大多数货币不同，比特币不依靠特定货币机构发行，它依据特定算法，通过大量的计算产生，比特币经济使用整个p2p网络中众多节点构成的分布式数据库来确认并记录所有的交易行为，并使用密码学的设计来确保货币...</p>
+          <div><a href="javascript">阅读全文 ></a></div>
+        </li>
+        <li>
+          <p><span>《经济日报》</span>在IBM待了18年，“老将”沈鸥到币报如何做安全</p>
+          <p>比特币（bitcoin）的概念最初由中本聪在2009年提出，根据中本聪的思路设计发布的开源软件以及建构其上的p2p网络。比特币是一种p2p形式的数字货币。点对点的传输意味着一个去中心化的支付系统。与大多数货币不同，比特币不依靠特定货币机构发行，它依据特定算法，通过大量的计算产生，比特币经济使用整个p2p网络中众多节点构成的分布式数据库来确认并记录所有的交易行为，并使用密码学的设计来确保货币...</p>
+          <div><a href="javascript">阅读全文 ></a></div>
+        </li>
+        <li>
+          <p><span>《经济日报》</span>在IBM待了18年，“老将”沈鸥到币报如何做安全</p>
+          <p>比特币（bitcoin）的概念最初由中本聪在2009年提出，根据中本聪的思路设计发布的开源软件以及建构其上的p2p网络。比特币是一种p2p形式的数字货币。点对点的传输意味着一个去中心化的支付系统。与大多数货币不同，比特币不依靠特定货币机构发行，它依据特定算法，通过大量的计算产生，比特币经济使用整个p2p网络中众多节点构成的分布式数据库来确认并记录所有的交易行为，并使用密码学的设计来确保货币...</p>
+          <div><a href="javascript">阅读全文 ></a></div>
+        </li>
+      </ul>
+      <ul class="notice-list">
+        <li class="clearfix">
+          <div class="notice-title">在IBM待了18年，“老将”沈鸥到币报如何做安全</div>
+          <div class="notice-date">2018年04月19日</div>
+        </li>
+        <li class="clearfix">
+          <div class="notice-title">在IBM待了18年，“老将”沈鸥到币报如何做安全</div>
+          <div class="notice-date">2018年04月19日</div>
+        </li>
+        <li class="clearfix">
+          <div class="notice-title">在IBM待了18年，“老将”沈鸥到币报如何做安全</div>
+          <div class="notice-date">2018年04月19日</div>
+        </li>
+        <li class="clearfix">
+          <div class="notice-title">在IBM待了18年，“老将”沈鸥到币报如何做安全</div>
+          <div class="notice-date">2018年04月19日</div>
+        </li>
+        
+      </ul>
+      <div class="page-bottom">
+        <div class="pagination">
+          <span class="prevPage"></span>
+          <span class="nextPage"></span>
+          <input type="text" class="pageIdx" value="" />
+          <ul class="pageNum clearfix"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

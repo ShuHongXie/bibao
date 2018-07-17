@@ -1,0 +1,28 @@
+.nofound {
+  text-align: center; }
+  .nofound .container {
+    width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 30px; }
+    .nofound .container img {
+      margin: 60px 0 30px 0; }
+    .nofound .container p {
+      text-align: center;
+      color: #717171;
+      font-size: 14px; }
+    .nofound .container a {
+      display: inline-block;
+      width: 138px;
+      height: 38px;
+      line-height: 38px;
+      background: none;
+      border: 1px solid #bbb;
+      margin-top: 30px;
+      border-radius: 3px;
+      color: #bbb;
+      cursor: pointer; }
+      .nofound .container a:hover {
+        border: 1px solid #999;
+        color: #999; }
+
+/*# sourceMappingURL=nofound.css.map */

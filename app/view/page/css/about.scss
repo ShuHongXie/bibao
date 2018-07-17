@@ -1,0 +1,151 @@
+#about {
+    .container {
+        width: 1200px;
+        margin: 0 auto;
+        .about-top {
+            padding: 43px 0 35px 0;
+            border-bottom:1px solid #EEEEEE ;
+            ul {
+                li {
+                    float: left;
+                    width: 148px;
+                    height: 38px;
+                    line-height: 38px;
+                    text-align: center;
+                    border: 1px solid #EEEEEE;
+                    font-size: 16px;
+                    margin-right:10px ;
+                    color: #333;
+                    &.active {
+                        color: #20CA70;
+                        border: 1px solid #20CA70;
+                    }
+                }
+            }
+        }
+        .about-bottom {
+            & > .about-all {
+                    & > li {
+                        float: left;
+                        padding: 45px 0 82px;           
+                        &:nth-child(1) {
+                            border-bottom: 2px solid #F2F3F4;
+                            border-top: 2px solid #F2F3F4;
+                            font-size: 16px;
+                            letter-spacing: 4px;
+                            line-height: 30px;
+                            text-indent: 50px;
+                            text-align:justify;
+                            p {
+                                margin-bottom: 20px;
+                            }
+                        }
+                        &:nth-child(2) {
+                            display: none;
+                            .comtact-msg {
+                                width: 1200px;
+                                height: 112px;
+                                border-top: 0.5px solid #EEEEEE;
+                                border-bottom: 0.5px solid #EEEEEE;
+                                box-sizing: border-box;
+                                margin-bottom: 30px;
+                                li {
+                                    float: left;
+                                    width: 299px;
+                                    height: 110px;
+                                    background-color: #F9F9F9;
+                                    border: 0.25px solid #EEEEEE;
+                                    p{
+                                        text-align: center;
+                                        &:first-child {
+                                            font-size: 16px;
+                                            color: #333;
+                                            margin-top: 34px;
+                                        }
+                                        &:last-child {
+                                            font-size: 14px;
+                                            color: #666;
+                                            margin-top: 14px;
+                                        }
+                                    }
+                                }
+                            }
+                            .feedback {
+                                .write-msg {                                   
+                                    li {
+                                        float: left;
+                                        margin:0  30px 20px 0;
+                                        label {
+                                           font-size: 14px;
+                                           height: 40px;
+                                           line-height: 40px;
+                                           color: #333;
+                                           display: block;
+                                        }
+                                        input {
+                                            width: 198px;
+                                            height: 36px;
+                                            border: 1px solid #EEEEEE;
+                                            text-indent: 10px;
+                                        }
+                                        textarea {
+                                            width: 1200px;
+                                            height: 98px;
+                                            border: 1px solid #EEEEEE;
+                                            resize:none ;
+                                        }
+                                        &:last-child {
+                                            width: 1200px;
+                                            overflow: hidden;
+                                            margin: 0;
+                                            button {
+                                                width: 98px;
+                                                height: 34px;
+                                                line-height: 34px;
+                                                border-right: 3px;
+                                                border: 1px solid #EEEEEE;
+                                                background: #fff;
+                                                font-size: 14px;
+                                                float: right;
+                                                cursor: pointer;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        &:nth-child(3){
+                            display: none;
+                            h5 {
+   
+                            }
+                            ul {
+                                margin-top: 40px;
+                                li {
+                                    margin-bottom: 40px;
+                                    p {
+                                        font-size: 16px;
+                                        line-height: 22px;
+                                        color: #061027;
+                                        a {
+                                            color: #1CB162;
+                                        }
+                                        &:first-child{
+                                            margin-bottom: 40px;
+                                        }
+                                        &:last-child{
+                                            
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        &:nth-child(4){
+                            display: none;
+                        }
+                    }
+            }
+
+        }
+    }
+}

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://cdn.bootcss.com/jquery/1.12.3/jquery.min.js"></script>
+</head>
+<body>
+  <button id='button1'>123</button>
+  <button id='button2'>456</button>
+  <form name="form1" id="form1">
+    <input id="file" type="file" name="file"></input>
+    <input type="file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" ID="fileSelect" runat="server" />  
+    <img src="news_img/filename.png" alt="">
+  </form>
+  <script type="text/javascript">
+  // var formdata=new FormData();
+    //  var form=document.getElementById("form1");
+    //  var formdata=new FormData(form);
+    //  var formdata=new FormData($("#form1")[0]);//获取文件法一
+var formdata=new FormData(); 
+formdata.append("file" , $("#form1")[0]);//获取文件法二
+formdata.append("name" , 'zhangsan');//获取文件法二
+// $("button").click(function(){
+      // $.ajax({
+      //     type : 'post',
+      //     url : '/v1/news/upload',
+      //     data : formdata,
+      //     cache : false,
+      //     processData : false, // 不处理发送的数据，因为data值是Formdata对象，不需要对数据做处理
+      //     contentType : false, // 不设置Content-type请求头
+      //     success : function(data){ console.log(data)},
+      // })
+      // $.ajax({
+      //     url: "/v1/tokens/getList",
+      //     type: 'POST',
+      //     data: formdata,
+      //     processData: false,
+      //     contentType: false,
+      //     success : function(data) {
+      //         console.log(data)
+      //     }
+      // });
+
+      // $.ajax({
+      //     url: "/v1/news/upload",
+      //     type: 'POST',
+      //     data: new FormData($('#form1')[0]),
+      //     processData: false,
+      //     contentType: false,
+      //     success : function(data) {
+      //         console.log(data)
+      //     }
+      // });
+// })
+  </script>
+  <script>
+    $('#button2').click(function() {
+      $.ajax({
+        type:'get',
+        url:'http://localhost:8085/v1/user/getUserTokenList',
+        // data: {
+        //   phone:'12345678910',
+        //   password: '123456',
+        // },
+        beforeSend: function(request) {
+          // request.setRequestHeader("csrftoken", "5O_z-vGvZ_LVNU3z2T6RY1JU");
+        },
+        // contentType:'application/json',
+        success:function(data){
+          console.log(data)
+        }
+      });
+    })
+    $("#button1").click(function(){
+      // $.ajax({
+      //   type:'get',
+      //   url:'http://127.0.0.1:7001/v1/news/getList',
+      //   data: {
+      //     title:'这是标题',
+      //     content: '<h3>天青色等烟雨</h3>',
+      //     type:0
+      //   },
+      //   beforeSend: function(request) {
+      //     request.setRequestHeader("csrftoken", "5O_z-vGvZ_LVNU3z2T6RY1JU");
+      //   },
+      //   // contentType:'application/json',
+      //   success:function(data){
+      //     console.log(data)
+      //   }
+      // });
+        // $.ajax({
+        //   type: 'get',
+        //   url:'http://127.0.0.1:7001/v1/admin/getUserList',
+        //   xhrFields: {	//允许跨域携带cookie
+        //     withCredentials: true
+        //   },
+        //   success:function(data){
+        //     console.log(data)
+        //   }
+        // })
+      $.ajax({
+        type:'post',
+        url:'http://localhost:8085/v1/user/login',
+        data: {
+          phone:'12345678910',
+          password: '123456',
+        },
+        beforeSend: function(request) {
+          // request.setRequestHeader("csrftoken", "5O_z-vGvZ_LVNU3z2T6RY1JU");
+        },
+        // contentType:'application/json',
+        success:function(data){
+          console.log(data)
+        }
+      });
+
+    });
+  </script>
+
+
+  <script>
+    $(document).ready(
+      function(){
+        $('#piechart_coinvol').highcharts(
+          {
+            legend:{
+            itemStyle:{
+              color:'#666',
+              fontWeight:'normal',
+            },
+            itemWidth:120,
+            symbolRadius:0
+          },chart:{
+            plotBackgroundColor:null,
+            plotBorderWidth:null,
+            plotShadow:false
+          },title:{
+            text:''
+          },tooltip:{
+            headerFormat:'{series.name}<br>',
+            pointFormat:'{point.name}: <b>{point.percentage:.1f}%</b>'
+          },plotOptions:{
+            pie:{
+              allowPointSelect:true,
+              cursor:'pointer',
+              dataLabels:{
+                enabled:false
+              },showInLegend:true}
+            },series:[
+              {type:'pie',name:'交易对成交量占比'}
+            ]
+          });
+
+        var coinCode=$("#coincode").val();var pieArr=[];$.ajax({type:"GET",url:apiHots+'cointrades_percent/'+coinCode+'/',async:true,dataType:"json",success:function(data){$(data).each(function(index,item){pieArr.push([item.name,item.y]);});$('#piechart_coinvol').highcharts().series[0].setData(pieArr);}});})
+  </script>
+</body>
+</html>

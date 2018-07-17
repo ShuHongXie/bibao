@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="Keywords" content="区块链,币">
+    {# 子模板名 #}
+    {% block titlename %}
+    {% endblock %}
+		<link rel="stylesheet" type="text/css" href="./public/front_end/css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="./public/front_end/css/commonHeader.css"/>
+		<link rel="stylesheet" type="text/css" href="./public/front_end/css/pagination.css"/>
+		<link rel="shortcut icon" href="./public/front_end/favicon.ico" /> 
+    {# 子模板样式 #}
+		{% block stylesheets %}
+    {% endblock %}
+	</head>
+  <body>
+		<div id="header">
+			<div class="container">
+				<ul class="clearfix">
+					<li><i></i><span>提示:</span>
+						{% block tip %}
+						{% endblock %}
+					</li>
+					<li><span>虚拟币:</span>
+						{% block tokenNums %}
+						{% endblock %}
+					</li>
+					<li>24小时成交量: <span>
+						{% block volume %}
+						{% endblock %}
+					</span></li>
+					<li>总市值: <span>¥ 
+						{% block values %}
+						{% endblock %}
+					</span></li>
+				</ul>
+			</div>
+		</div>
+		<nav id="nav" >
+			<div class="container">
+				<ul class="nav clearfix">
+					<li><a href="/">首页</a></li>
+					<li class="ranking">
+						<a href="/risefall">涨跌排行</a>
+						{# <ul class="rank">
+							<li><a href="javascript:;">涨跌幅排行版</a></li>
+							<li><a href="javascript:;">24H成交额排行（币种）</a></li>
+						</ul> #}
+					</li>
+					<li><a href="javascript:;"><img src="./public/front_end/img/logo.png" alt="" /></a></li>
+					<li><a href="/notice/1">新闻公告</a></li>
+					<li><a href="/app">APP</a></li>
+				</ul>
+				<div class="input-box">
+					<input type="text" id="search-box" value="" placeholder="请输入币种关键字" />
+					<i id='search'></i>
+				</div>
+			</div>
+		</nav>
+    {# 子模板主要内容 #}
+		{% block content %}
+    {% endblock %}
+
+		<footer id="footer" >
+			<div class="container">
+				{# <ul class="shangbiao clearfix">
+					<li><a href='javascript:;' ><img src="./public/front_end/img/shangbiao.png" alt="" /></a></li>
+				</ul> #}
+				{% block trademark  %}
+    		{% endblock %}
+				<ul class="about clearfix">
+					<li><a href="/about">关于我们</a></li>
+					<li><a href="/contactUs">联系我们</a></li>
+					<li><img src="/public/front_end/img/userHead.png" alt="" /></li>
+					<li><a href="/commonProblem">常见问题</a></li>
+					<li><a href="/statement">免责声明</a></li>
+				</ul>
+				<p class="names">Token Message</p>
+				<p>©Copyright bibao.com 2018 | 备案号：粤ICP备16116847号-8</p>
+			</div>
+		</footer>
+		<div class="blackBg"></div>
+		<div class="loginTip">
+			<p>需要您<span>登录</span>后才能添加自选行情</p>
+			<div class="clearfix">
+				<button>取消</button>
+				<button>登陆</button>
+			</div>
+		</div>
+		<div class="register">
+			<div class="close"></div>
+			<p>注册币报</p>
+			<ul>
+				<li>
+					<input type="text" class="reg_phone_inp" name="" placeholder="手机登录" value="" />
+					<span class="tip_phone">123</span>
+				</li>
+				<li>
+					<input type="text" class="test_code_inp" name="" placeholder="请输入短信验证码" value="" />
+					<button class="testCode">发送验证码</button>
+					<span class="tip_test"></span>
+				</li>
+				<li>
+					<input type="password" class="reg_pwd_inp" name="" placeholder="输入6-16数字字母组合的登录密码" value="" />
+					<span class="tip_pwd"></span>
+				</li>
+				<li>
+					<input type="password" class="reg_pwdr_inp" name="" placeholder="再次输入密码" value="" />
+					<span class="tip_pwdr" ></span>
+				</li>
+				<li>
+					<button class="reg">立即注册</button>
+				</li>
+				<li>
+					<p>已有账号? <span class="login_now">立即登录</span></p>
+				</li>
+			</ul>
+		</div>
+		<div class="login">
+			<div class="close close_login"></div>
+			<p>登录币报</p>
+			<ul>
+				<li>
+					<input type="text" class="login_phone_inp" name="login" value="" placeholder="手机登录" />
+					<span class="login_t_p"></span>
+				</li>
+				<li>
+					<input type="password" class="login_phone_pwd" name="password" value="" placeholder="输入6-16数字字母组合的登录密码" />
+					<span class="login_t_pwd"></span>
+				</li>
+				<li>
+					<button class="log">登录</button>
+				</li>
+				<li class="clearfix">
+					<p>还没有账号?<span class="reg_now">马上注册</span></p>
+					<div class="forgetPwd">忘记密码?</div>
+				</li>
+				<li>
+					<div class="advertise">
+						<img src="http://iph.href.lu/300x320" alt=""/>
+						<div>广告</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="retrieve">
+			<div class="close"></div>
+			<p>找回密码</p>
+			<ul>
+				<li>
+					<input type="text" class="retrieve_phone" name="" placeholder="输入手机号码" value="" />
+					<span class="retrieve_phone_tip" >123</span>
+				</li>
+				<li>
+					<input type="text" class="retrieve_code"  name="" placeholder="输入短信验证码" value="" />
+					<button class="retrieve_code_btn">发送验证码</button>
+					<span class="retrieve_code_tip"></span>
+				</li>
+				<li>
+					<input type="password" class="retrieve_pwd" name="" placeholder="您的新密码" value="" />
+					<span class="retrieve_pwd_tip"></span>
+				</li>
+				<li>
+					<input type="password" class="retrieve_pwd_r" name="" placeholder="再次输入密码" value="" />
+					<span class="retrieve_pwd_r_tip" ></span>
+				</li>
+				<li>
+					<button class="retrieve_btn" >立即找回</button>
+				</li>
+				<li>
+					<p>已有账号? <span class="login_now">立即登录</span></p>
+				</li>
+			</ul>
+		</div>
+		<div class="userMsg">
+			<div class="userTip">用户中心</div>
+			<div class="close"></div>
+			<div class="userTop">
+				<div class="clearfix">
+					<img src="/public/front_end/img/userHead.png" alt=""/>
+					<div>
+						昵称 : <span class="userc_name"></span>
+					</div>
+				</div>
+			</div>
+			<ul>
+				<li>
+					<span>登录账号 : </span> <span class="userc_phone"></span>
+				</li>
+				<li>
+					<span>注册时间 : </span> <span class="userc_regtime"></span>
+				</li>
+				<li>
+					<span>修改密码 : </span> <span>去修改</span>
+				</li>
+			</ul>
+			<div class="login_out">登出账户</div>
+		</div>
+		<div class="login-box">
+			<div class="toLogin">登录</div>
+			<div class="toRes">注册</div>
+			<div class="userCenter"><i></i>用户中心</div>
+		</div>
+		<div class="msg-box">
+			<ul>
+				<li>
+					<i></i>
+					<div class="QRcode-qq">
+						{% block qq %}
+						{% endblock %}
+						<p>QQ二维码</p>
+					</div>
+				</li>
+				<li>
+					<i></i>
+					<div class="QRcode-wechat">
+						{% block wechat %}
+						{% endblock %}
+						<p>微信二维码</p>
+					</div>
+				</li>
+				<li>
+					<i></i>
+					<div class="phone-num">
+						<div>
+							<span>客服电话</span>
+							<p>
+								{% block phone %}
+								{% endblock %}
+							</p>
+						</div>
+						<div>
+							<span>电子邮箱</span>
+							<p>
+								{% block email %}
+								{% endblock %}
+							</p>
+						</div>
+					</div>
+				</li>
+				<li class="toTop"><i></i></li>
+			</ul>
+		</div>
+		<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+		<script src="./public/front_end/js/layer/layer.js"></script>
+		<script src="./public/front_end/js/peity.js"></script>
+		<script src="./public/front_end/js/jsencrypt.mins.js"></script>
+		<script src="./public/front_end/js/common.js"></script>
+		<script src="./public/front_end/js/commonLoginJudge.js"></script>	
+		<script src="./public/front_end/js/commonHeader.js"></script>	
+		<script src="./public/front_end/js/retrieve.js"></script>
+		<script src="./public/front_end/js/reg.js"></script>
+		<script src="./public/front_end/js/login.js"></script>
+		<script>
+			$('#search').click(function() {
+				location.href = '/token/' + $('#search-box').val();
+			})
+		</script>
+    {# 子模板引入脚本 #}
+		{% block scriptsrc %}
+    {% endblock %}
+	</body>
+</html>

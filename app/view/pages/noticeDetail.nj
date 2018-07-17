@@ -1,0 +1,60 @@
+{% extends '../public/sec_framework.nj' %}
+
+{% block titlename %}<title>币报_新闻列表_数字货币数据平台</title>{% endblock %}
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="../public/front_end/css/notice.css"/>
+<link rel="stylesheet" type="text/css" href="../public/front_end/css/detail.css"/>
+{% endblock %}
+
+{# 导航信息 #}
+{% block tip %} {{ info.tip }} {% endblock %}
+{% block volume %} {{ info.volume }} {% endblock %}
+{% block values %} {{ info.values }} {% endblock %}
+{% block tokenNums %} {{ info.tokenNums }} {% endblock %}
+
+{# 主要内容 #}
+{% block content %}
+<div id="notice">
+  <div class="container">
+    <div class="notice-top clearfix">
+      <div class="news"> {{news[0].title}} </div>
+      {# <div class="change-btn">
+        <button>新闻</button>
+        <button class="active">公告</button>
+      </div> #}
+    </div>
+    <div class="notice-bottom">
+      <div class="detail">
+        {{ news[0].content | safe }}
+      </div>
+      <div class="switch">
+        <span>下一篇：
+        {% if news[1] != undefined %}
+          <a href="{{news[1].id}}">{{news[1].title}}</a>
+        {% endif %}
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{# 友情链接商标 #}
+{% block trademark %}
+<ul class="shangbiao clearfix">
+  {% for item in info.trademark %}
+  <li><a href='{{ item.link }}' ><img src="../public{{ item.img }}" alt="" /></a></li>
+  {% endfor %}
+</ul>
+{% endblock %}
+{# 侧边滑过二维码图片 #}
+{% block qq %}<img src="../public/{{ info.qq }}" alt="" />{% endblock %}
+{% block wechat %}<img src="../public/{{ info.wechat }}" alt="" />{% endblock %}
+{# 侧边邮箱和电话 #}
+{% block phone %}{{ info.phone }}{% endblock %}
+{% block email %}{{ info.email }}{% endblock %}
+
+{% block scriptsrc %}
+{# <script src="../public/front_end/js/notice.js"></script> #}
+
+{% endblock %}
